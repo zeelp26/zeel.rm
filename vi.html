@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            color: #fefefe;
+            font-family: Arial, sans-serif;
+            background-image: url(vpb.avif);
+            background-repeat:repeat(1);
+            background-size:contain;
+        }
+
+        .plan-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #595155;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .plan-container .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #f6f7f9;
+        }
+
+        .details {
+            margin-top: 10px;
+            display: none;
+        }
+
+        .details p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #f8f3f3;
+        }
+
+        .btn-recharge {
+            background-color: #ff0000;
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            width: 100%;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .btn-recharge:hover {
+            background-color: #b30000;
+        }
+
+        .plan-container:hover {
+            transform: scale(1.02);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 6px 12px rgba(250, 249, 249, 0.15);
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            
+            $(".toggle-details").click(function() {
+                $(this).closest(".plan-container").find(".details").slideToggle("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="plan-container">
+        <h1>VI Plan's</h1>
+        <h6>Select your plan</h6>
+    </div>
+    
+    <div class="plan-container">
+        
+        <h5 class="text-muted" style="color: #f8f3f3;">Popular</h5>
+        <div class="price">&#8377;23</div>
+        <div class="d-flex justify-content-between">
+            <div>Data</div>
+            <div>1GB</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Validity</div>
+            <div>1 Day (24 Hours)</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Calls</div>
+            <div>NA</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>SMS</div>
+            <div>NA</div>
+        </div>
+
+        <div class="details">
+            <p>Data Only Pack (No Voice & No SMS)</p>
+            <p>Data: 1GB | Voice: NA | SMS: NA | Validity: 1 Day (24 Hours)</p>
+            <p>Note: 1GB High-Speed Data thereafter Unlimited at 64Kbps</p>
+        </div>
+
+        <a href="p1.html"><button class="btn-recharge">Proceed to Recharge</button></a>
+        <button class="btn btn-secondary mt-2 toggle-details">Toggle Details</button>
+    </div>
+
+    
+    <div class="plan-container">
+        <h5 class="text-muted">Popular</h5>
+        <div class="price">&#8377;208</div>
+        <div class="d-flex justify-content-between">
+            <div>Data</div>
+            <div>1.5 GB/day</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Validity</div>
+            <div>30 Days</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Calls</div>
+            <div>Unlimited Calls</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>SMS</div>
+            <div>100 SMS/day</div>
+        </div>
+
+        <div class="details">
+            <p>ADD-ON Data Pack- 1.5 GB/Day for 30 Days. No
+                Service Validity.</p>
+        </div>
+
+        <a href="p1.html"><button class="btn-recharge">Proceed to Recharge</button></a>
+        <button class="btn btn-secondary mt-2 toggle-details">Toggle Details</button>
+    </div>
+
+    <div class="plan-container">
+        <h5 class="text-muted">Popular</h5>
+        <div class="price">&#8377;979</div>
+        <div class="d-flex justify-content-between">
+            <div>Data</div>
+            <div>2GB/day</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Validity</div>
+            <div>84 Days</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Calls</div>
+            <div>Unlimited Calls</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>SMS</div>
+            <div>100 SMS/day</div>
+        </div>
+
+        <div class="details">
+            <p>HALF-DAY UNLIMITED DATA (12AM-12PM). Just for
+                you! Get 2GB/Day+UL Calls+100 SMS/Day + 15 OTTs
+                on ViMTV at no extra cost. UL Pack Validity:84D.
+                Exclusive -Vi Super Hero Unlimited #12am to 12pm
+                Unlimited Data #Carry unused Data from Mon-Fri
+                into the weekend #Up to 2GB backup data/month</p>
+        </div>
+
+        <a href="p1.html"><button class="btn-recharge">Proceed to Recharge</button></a>
+        <button class="btn btn-secondary mt-2 toggle-details">Toggle Details</button>
+    </div>
+
+    <div class="plan-container">
+        <h5 class="text-muted">Popular</h5>
+        <div class="price">&#8377;1,999</div>
+        <div class="d-flex justify-content-between">
+            <div>Data</div>
+            <div>24 GB</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Validity</div>
+            <div>365 Days</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Calls</div>
+            <div>Unlimited Local / National</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>SMS</div>
+            <div>100 SMS/day</div>
+        </div>
+
+        <div class="details">
+            <p>Get Unlimited Local/National Calls+ 24GB + 360OSMS. Validity:365 Days</p>
+        </div>
+
+        <a href="p1.html"><button class="btn-recharge">Proceed to Recharge</button></a>
+        <button class="btn btn-secondary mt-2 toggle-details">Toggle Details</button>
+    </div>
+
+    <div class="plan-container">
+        <h5 class="text-muted">Popular</h5>
+        <div class="price">&#8377;3,688</div>
+        <div class="d-flex justify-content-between">
+            <div>Data</div>
+            <div>2GB/day</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Validity</div>
+            <div>365 Days</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>Calls</div>
+            <div>Unlimited Calls</div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <div>SMS</div>
+            <div>100 SMS/day</div>
+        </div>
+
+        <div class="details">
+            <p>Half Day Unlimited Data :  Enjoy 12am to 12pm Unlimited data with Vi SuperHero</p>
+            <p> Disney+ Hotstar : TV Shows | Movies | Originals | Sports</p>
+            <p> Weekend data rollover : Carry forward unused data from Mon-Fri to the weekend! (Sat-Sun)</p>
+            <p>Data delights : Up to 2GB of backup Data every month, at no extra cost. Dial 121249 or claim via ViApp</p>
+            <p> Details : Enjoy Data without limits from 12AM to 12PM. Disney+ Hotstar Mobile subscription for 1 Year. Get 2GB/Day + Unlimited Calls + 100 SMS/Day valid for 365 Days. Carry Mon-Fri unused Data into Sat-Sun. Upto 2GB of Backup Data every month at no extra cost.</p>
+        </div>
+
+        <a href="p1.html"><button class="btn-recharge">Proceed to Recharge</button></a>
+        <button class="btn btn-secondary mt-2 toggle-details">Toggle Details</button>
+    </div>
+</body>
+</html>

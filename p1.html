@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        const form = document.getElementById('paymentForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const selectedMethod = document.querySelector('input[name="payment"]:checked');
+
+            if (selectedMethod) {
+                errorMessage.style.display = 'none';
+                alert(`You selected ${selectedMethod.id.toUpperCase()} as your payment method.`);
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url(p1b.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            width: 400px;
+            border-radius: 8px;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .container form input {
+            display: none;
+        }
+
+        .container form .category {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .category label {
+            height: 145px;
+            padding: 20px;
+            border: 2px solid transparent;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category label:hover {
+            background: #e0e0ff;
+            border-color: #6064b6;
+        }
+
+        #visa:checked ~ .category .visaMethod,
+        #mastercard:checked ~ .category .mastercardMethod,
+        #paypal:checked ~ .category .paypalMethod,
+        #AMEX:checked ~ .category .amexMethod {
+            background: #e0e0ff;
+            border-color: #6064b6;
+        }
+
+        #visa:checked ~ .category .visaMethod .check,
+        #mastercard:checked ~ .category .mastercardMethod .check,
+        #paypal:checked ~ .category .paypalMethod .check,
+        #AMEX:checked ~ .category .amexMethod .check {
+            display: block;
+        }
+
+        label .imgName {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+        }
+
+        .imgName span {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .imgName .imgContainer {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .check {
+            display: none;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .check i {
+            font-size: 18px;
+            color: #6064b6;
+        }
+
+        .submit-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background: #6064b6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #4a4ea5;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            Select a <span style="color: #6064b6">Payment</span> Method
+        </div>
+
+        <form id="paymentForm">
+            <input type="radio" name="payment" id="visa">
+            <input type="radio" name="payment" id="mastercard">
+            <input type="radio" name="payment" id="paypal">
+            <input type="radio" name="payment" id="AMEX">
+
+            <div class="category">
+                <label for="visa" class="visaMethod">
+                    <div class="imgName">
+                        <div class="imgContainer visa">
+                            <img src="v1.jpg" alt="Visa">
+                        </div>
+                        <span class="name">VISA</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+
+                <label for="mastercard" class="mastercardMethod">
+                    <div class="imgName">
+                        <div class="imgContainer mastercard">
+                            <img src="m2.jpg" alt="Mastercard">
+                        </div>
+                        <span class="name">Mastercard</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+
+                <label for="paypal" class="paypalMethod">
+                    <div class="imgName">
+                        <div class="imgContainer paypal">
+                            <img src="g3.jpg" alt="Google Pay">
+                        </div>
+                        <span class="name">Google Pay</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+
+                <label for="AMEX" class="amexMethod">
+                    <div class="imgName">
+                        <div class="imgContainer AMEX">
+                            <img src="p4.jpg" alt="Paytm">
+                        </div>
+                        <span class="name">Paytm</span>
+                    </div>
+                    <span class="check"><i class="fa-solid fa-circle-check"></i></span>
+                </label>
+            </div>
+
+            <a href="p2.html"><button type="button" class="submit-button">Submit</button></a>
+            <div class="error-message" id="errorMessage">Please select a payment method.</div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
